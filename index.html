@@ -61,7 +61,7 @@
       display:flex;flex-direction:column;
       align-items:center;justify-content:center;
       z-index:1000;
-      animation:fadeOutIntro 1.2s ease 2.5s forwards;
+      transition: opacity 1s ease, visibility 1s ease;
     }
     #intro .big-cake{font-size:110px;animation:cakePop 0.8s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both;}
     #intro .intro-title{
@@ -85,11 +85,11 @@
       from{transform:scale(0.2) rotate(-15deg);opacity:0;}
       to{transform:scale(1) rotate(0deg);opacity:1;}
     }
-    @keyframes fadeOutIntro{to{opacity:0;pointer-events:none;visibility:hidden;}}
+    #intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
 
     /* Main */
-    #main{opacity:0;animation:fadeIn 1.2s ease 3.2s forwards;}
-    @keyframes fadeIn{to{opacity:1;}}
+    #main{opacity:0;transition:opacity 1s ease;}
+    #main.show{opacity:1;}
 
     /* Balloons */
     .balloons{position:fixed;width:100%;height:100%;pointer-events:none;top:0;left:0;z-index:1;}
@@ -450,96 +450,7 @@
 
   <div class="stars" id="stars"></div>
 
-  <div id="intro">PS C:\Users\korir\Desktop\chero> git init
-Initialized empty Git repository in C:/Users/korir/Desktop/chero/.git/
-PS C:\Users\korir\Desktop\chero> git branch -M main
-PS C:\Users\korir\Desktop\chero> git remote add origin https://github.com/wilmarkkorir-lab/chero.git
-PS C:\Users\korir\Desktop\chero> git add .
-warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
-PS C:\Users\korir\Desktop\chero> git commit -m "Initial commit"
-[main (root-commit) ef5c1f9] Initial commit
- 7 files changed, 600 insertions(+)
- create mode 100644 index.html
- create mode 100644 public/Screenshot_2026-10-03-11-48-26-040_com.whatsapp.w4b-edit - Copy.jpg
- create mode 100644 public/Screenshot_2026-10-03-11-48-26-040_com.whatsapp.w4b-edit.jpg
- create mode 100644 public/Screenshot_2026-10-03-11-49-20-360_com.whatsapp.w4b-edit - Copy.jpg
- create mode 100644 public/Screenshot_2026-10-03-11-49-20-360_com.whatsapp.w4b-edit.jpg
- create mode 100644 public/Screenshot_2026-10-03-11-49-32-633_com.whatsapp.w4b-edit - Copy.jpg
- create mode 100644 public/Screenshot_2026-10-03-11-49-32-633_com.whatsapp.w4b-edit.jpg
-PS C:\Users\korir\Desktop\chero> git push -u origin main
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (7/7), done.
-Writing objects: 100% (7/7), 2.65 MiB | 239.00 KiB/s, done.
-Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-To https://github.com/wilmarkkorir-lab/chero.git
- * [new branch]      main -> main
-branch 'main' set up to track 'origin/main'.
-PS C:\Users\korir\Desktop\chero> npm i -g vercel
->> cd C:\Users\korir\Desktop\chero
->> vercel --yes
->> 
-
-added 14 packages, removed 29 packages, and changed 271 packages in 3m
-
-39 packages are looking for funding
-  run `npm fund` for details
-npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
-npm warn allow-scripts   esbuild@0.27.0 (postinstall: node install.js)
-npm warn allow-scripts
-npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
-Vercel CLI 62.2.0 (Node.js 24.14.0)
-> NOTE: The Vercel CLI now collects telemetry regarding usage of the CLI.
-> This information is used to shape the CLI roadmap and prioritize features.
-> You can learn more, including how to opt-out if you'd not like to participate in this program, by visiting the following URL:
-> https://vercel.com/docs/cli/about-telemetry
-Error: No existing credentials found. Run `vercel deploy --temporary` to create a temporary deployment you can claim later, or `vercel login` to log in.
-Learn More: https://err.sh/vercel/no-credentials-found
-PS C:\Users\korir\Desktop\chero> 
- *  History restored 
-
-PS C:\Users\korir\Desktop\chero> git push -u origin main
- *  History restored              
-               
-PS C:\Users\korir\Desktop\chero> cd C:\Users\korir\Desktop\chero                                    
->> vercel --prod                  
->>                                                                    
-Vercel CLI 62.2.0 (Node.js 24.14.0)
-Error: No existing credentials found. Run `vercel deploy --temporary` to create a temporary deployment you can claim later, or `vercel login` to log in.        
-Learn More: https://err.sh/vercel/no-credentials-found
-PS C:\Users\korir\Desktop\chero> vercel --prod
->> 
-Vercel CLI 62.2.0 (Node.js 24.14.0)
-Error: No existing credentials found. Run `vercel deploy --temporary` to create a temporary deployment you can claim later, or `vercel login` to log in.
-Learn More: https://err.sh/vercel/no-credentials-found
-PS C:\Users\korir\Desktop\chero> vercel login
->> 
-Vercel CLI 62.2.0 (Node.js 24.14.0)
-> 
-  Visit https://vercel.com/oauth/device?user_code=WNHP-QPKG
-
-  Congratulations! You are now signed in.
-
-  To deploy something, run `vercel`.
-  To set up the Vercel plugin and connect your coding agents to the AI Gateway, run `vercel setup`.
-
-  💡 To deploy every commit automatically,
-  connect a Git Repository (vercel.link/git (https://vercel.link/git)).
-PS C:\Users\korir\Desktop\chero> vercel --prod
->> 
-Vercel CLI 62.2.0 (Node.js 24.14.0)
-
-  Directory       ~\Desktop\chero
-
-  Team            wilmarkkorir-5617s-projects
-? Which project? (Use arrow keys)
-> chero (linked by git)
- ──────────────
-  Search all projects
-  Create a new project
-Error: An unexpected error occurred in deploy: Error: User force closed the prompt with 0 null
-PS C:\Users\korir\Desktop\chero> 
+  
     <span class="big-cake">🎂</span>
     <div class="intro-title">A Very Special Surprise…</div>
     <div class="intro-sub">Just for you, Chero ✨</div>
@@ -619,6 +530,11 @@ PS C:\Users\korir\Desktop\chero>
   </div>
 
   <script>
+    setTimeout(()=>{
+      document.getElementById('intro').classList.add('hide');
+      document.getElementById('main').classList.add('show');
+    }, 2500);
+
     const colors=['#f9c74f','#f3722c','#f94144','#90be6d','#43aa8b','#ff6eb4','#a78bfa','#43e8d8','#ffd6ff'];
 
     const starsEl=document.getElementById('stars');
