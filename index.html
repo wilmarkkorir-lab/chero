@@ -61,8 +61,9 @@
       display:flex;flex-direction:column;
       align-items:center;justify-content:center;
       z-index:1000;
-      transition: opacity 1s ease, visibility 1s ease;
+      transition:opacity 1s ease, visibility 1s ease;
     }
+    #intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
     #intro .big-cake{font-size:110px;animation:cakePop 0.8s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both;}
     #intro .intro-title{
       font-family:'Great Vibes','Dancing Script','Brush Script MT',cursive;
@@ -85,7 +86,7 @@
       from{transform:scale(0.2) rotate(-15deg);opacity:0;}
       to{transform:scale(1) rotate(0deg);opacity:1;}
     }
-    #intro.hide{opacity:0;visibility:hidden;pointer-events:none;}
+
 
     /* Main */
     #main{opacity:0;transition:opacity 1s ease;}
@@ -268,12 +269,12 @@
       background:#0d0221;
     }
     .photo-card:nth-child(even){transform:scale(0.75) translateY(60px) rotate(3deg);}
-    .photo-card:nth-child(1){animation-delay:3.6s;}
-    .photo-card:nth-child(2){animation-delay:3.9s;}
-    .photo-card:nth-child(3){animation-delay:4.2s;}
-    .photo-card:nth-child(4){animation-delay:4.5s;}
-    .photo-card:nth-child(5){animation-delay:4.8s;}
-    .photo-card:nth-child(6){animation-delay:5.1s;}
+    .photo-card:nth-child(1){animation-delay:0.2s;}
+    .photo-card:nth-child(2){animation-delay:0.4s;}
+    .photo-card:nth-child(3){animation-delay:0.6s;}
+    .photo-card:nth-child(4){animation-delay:0.8s;}
+    .photo-card:nth-child(5){animation-delay:1.0s;}
+    .photo-card:nth-child(6){animation-delay:1.2s;}
     @keyframes cardReveal{
       to{transform:scale(1) translateY(0) rotate(0deg);opacity:1;}
     }
@@ -450,7 +451,7 @@
 
   <div class="stars" id="stars"></div>
 
-  
+  <div id="intro">
     <span class="big-cake">🎂</span>
     <div class="intro-title">A Very Special Surprise…</div>
     <div class="intro-sub">Just for you, Chero ✨</div>
@@ -532,7 +533,7 @@
   <script>
     setTimeout(()=>{
       document.getElementById('intro').classList.add('hide');
-      document.getElementById('main').classList.add('show');
+      setTimeout(()=>{ document.getElementById('main').classList.add('show'); }, 200);
     }, 2500);
 
     const colors=['#f9c74f','#f3722c','#f94144','#90be6d','#43aa8b','#ff6eb4','#a78bfa','#43e8d8','#ffd6ff'];
